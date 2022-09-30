@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/pricedown.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <title>Juicer's Projects</title>
+</head>
+<body>
+    <div id="section1" class="column section bg1">
+        <div class="caption">
+            <h1>Hello, my name is Juicer.</h1>
+            <h2>I do cool things, mostly.</h2>
+        </div>
+
+        <button onclick="document.getElementById('section2').scrollIntoView()" class="marge"><h3>Show me!</h3></button>
+    </div>
+    <div id="section2" class="section bg2">
+        <div class="subsection">
+            <h1 class="text-shadow-alt">About me.</h1>
+            <p class="text-shadow-alt">I mainly code as a hobby, my knowledge includes C++/C#/Java/Python. 
+                I am currently working on a GPS mod for GTA SA.</p>
+            
+            <div class="socialsbar">
+                <button class="twitter" onclick="window.open('https://www.twitter.com/juicermv')">My Twitter</button>
+                <button class="github" onclick="window.open('https://www.github.com/juicermv')" >My Github</button>
+                <button class="pricedown outline" onclick="document.getElementById('section3').scrollIntoView()" >SA GPS Redux</button>
+            </div>
+        </div>
+        <div class="subsection"></div>
+       
+    </div>
+
+    <div id="section3" class="section bg3">
+        <div class="subsection bgblur boxshadow grad">
+            <h1 class="text-shadow outline pricedown">SA GPS Redux</h1>
+            <p class="text-shadow">What you're probably here for. This mod for GTA SA provides universal GPS navigation for both mission objectives and the player waypoint. It's also super customizable.</p>
+            <div class="socialsbar">
+                <button onclick="window.open('https://github.com/juicermv/GTA-GPS-Redux/releases')">Download</button>
+                <button onclick="window.open('https://github.com/juicermv/GTA-GPS-Redux')">More Info</button>
+                <button onclick="document.getElementById('section1').scrollIntoView()">Go back up</button>
+            </div>
+            
+        </div>
+        <div class="subsection"></div>
+    </div>
+</body>
+</html>

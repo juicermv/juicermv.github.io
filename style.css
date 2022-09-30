@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    font-family: Roboto;
+    overflow-y: hidden;
+    font-size: large;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.section {
+    height: 100vh;
+    margin: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 0 0px 6px rgba(0,0,0,0.16), 0 0px 6px rgba(0,0,0,0.23);
+}
+
+.subsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    padding: 0 2.5em;
+    margin: 0;
+}
+
+
+
+.text-shadow {
+    text-shadow: 0px 0px 2px black, 0px 0px 2px black;
+}
+
+.text-shadow-alt {
+    text-shadow: 0px 0px 0.5em rgba(0, 0, 0, 0.16), 0px 0px 0.5em rgba(0, 0, 0, 0.16);
+}
+
+.caption {
+    font-weight: lighter;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.caption * {
+    backdrop-filter: blur(1em);
+    padding: 0.7em 0.5em;
+    margin: 0.2em auto;
+}
+
+
+.title {
+    backdrop-filter: blur(1em);
+    border-radius: 8px;
+    padding: 0.5em 0.7em;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.marge {
+    margin-top: 3em;
+}
+
+.bg1 {
+    background-image: url("assets/bg1.png");
+    background-attachment: fixed;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.bg2 {
+    background-color: firebrick;
+    z-index: 1;
+}
+
+.bg3 {
+    background-image: url("assets/bg3.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 190vh;
+    z-index: -1;
+    background-color: rgb(214, 195, 153);
+}
+
+.bgblur {
+    backdrop-filter: blur(1em);
+}
+
+.grad {
+    background-image: linear-gradient(to right, rgba(0,0,0,0.95), rgb(214, 195, 153, 0.16));
+}
+
+.boxshadow {
+    box-shadow: 0 0px 6px rgba(0,0,0,0.16), 0 0px 6px rgba(0,0,0,0.23);
+}
+
+.pricedown {
+    font-family: Pricedown;
+}
+
+button {
+    border-radius: 0em;
+    border: 0.15em white solid;
+    backdrop-filter: blur(1em);
+    color: white;
+    background-color: transparent;
+    padding: 0.5em 0.7em;
+    box-shadow: 0 0px 6px rgba(0,0,0,0.16), 0 0px 6px rgba(0,0,0,0.23);
+    animation-name: reversehoveranim;
+    animation-duration: 400ms;
+}
+
+.github {
+    background-color: rgb(22, 27, 34);
+}
+
+.twitter {
+    background-color: rgb(26, 140, 216);
+}
+
+.socialsbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.socialsbar * {
+    margin: 0.5em;
+}
+
+.outline {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+button:hover{
+    cursor: pointer;
+    animation-name: hoveranim;
+    animation-duration: 500ms;
+    border-width: 00.2em;
+}
+
+@keyframes hoveranim {
+    from {
+        border-width: 0.15em;
+    } to {
+        border-width: 0.2em;
+    }
+}
+
+@keyframes reversehoveranim {
+    to {
+        border-width: 0.15em;
+    } from {
+        border-width: 0.2em;
+    }
+}
