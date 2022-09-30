@@ -11,15 +11,20 @@
     <title>Juicer's Projects</title>
 </head>
 <body>
-    <div id="section1" class="column section bg1">
-        <div class="caption">
-            <h1>Hello, my name is Juicer.</h1>
-            <h2>I do cool things, mostly.</h2>
-        </div>
+    <div id="section1" class="section bg1">
+        <div class="subsection"></div>
+        <div class="subsection boxshadow bgblur">
+            <div class="caption">
+                <h1>Hello, my name is Juicer.</h1>
+                <h2>I do cool things, mostly.</h2>
+            </div>
 
-        <button onclick="document.getElementById('section2').scrollIntoView()" class="marge"><h3>Show me!</h3></button>
+            <button class="marge" onclick="document.getElementById('section2').scrollIntoView()">Show me!</button>
+        </div>
     </div>
+
     <div id="section2" class="section bg2">
+        <div class="subsection pfp"></div>
         <div class="subsection">
             <h1 class="text-shadow-alt">About me.</h1>
             <p class="text-shadow-alt">I mainly code as a hobby, my knowledge includes C++/C#/Java/Python. 
@@ -31,14 +36,12 @@
                 <button class="pricedown outline" onclick="document.getElementById('section3').scrollIntoView()" >SA GPS Redux</button>
             </div>
         </div>
-        <div class="subsection"></div>
-       
     </div>
 
     <div id="section3" class="section bg3">
         <div class="subsection bgblur boxshadow grad">
-            <h1 class="text-shadow outline pricedown">SA GPS Redux</h1>
-            <p class="text-shadow">What you're probably here for. This mod for GTA SA provides universal GPS navigation for both mission objectives and the player waypoint. It's also super customizable.</p>
+            <h1 class="text-shadow-alt outline pricedown">SA GPS Redux</h1>
+            <p>What you're probably here for. This mod for GTA SA provides universal GPS navigation for both mission objectives and the player waypoint. It's also super customizable.</p>
             <div class="socialsbar">
                 <button onclick="window.open('https://github.com/juicermv/GTA-GPS-Redux/releases')">Download</button>
                 <button onclick="window.open('https://github.com/juicermv/GTA-GPS-Redux')">More Info</button>

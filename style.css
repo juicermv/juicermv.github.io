@@ -49,7 +49,6 @@ html {
 }
 
 .caption * {
-    backdrop-filter: blur(1em);
     padding: 0.7em 0.5em;
     margin: 0.2em auto;
 }
@@ -66,16 +65,33 @@ html {
 }
 
 .marge {
+    margin: auto;
     margin-top: 3em;
+    margin-bottom: 0;
 }
 
 .bg1 {
     background-image: url("assets/bg1.png");
     background-attachment: fixed;
-    background-position: left;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 300vh;
     z-index: -1;
+    animation-name: bg1;
+    animation-duration: 240s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier();
+}
+
+@keyframes bg1 {
+    0% {
+        background-position: top center;
+    } 
+    50% {
+        background-position: bottom center;
+    }
+    100% {
+        background-position: top center;
+    }
 }
 
 .bg2 {
@@ -87,17 +103,33 @@ html {
     background-image: url("assets/bg3.png");
     background-position: right;
     background-repeat: no-repeat;
-    background-size: 190vh;
+    background-size: 300vh;
     z-index: -1;
     background-color: rgb(214, 195, 153);
+    animation-name: bg3;
+    animation-duration: 240s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier();
+}
+
+@keyframes bg3 {
+    0% {
+        background-position: bottom right;
+    } 
+    50% {
+        background-position: top left;
+    }
+    100% {
+        background-position: bottom right;
+    }
 }
 
 .bgblur {
-    backdrop-filter: blur(1em);
+    backdrop-filter: blur(1em) saturate(150%);
 }
 
 .grad {
-    background-image: linear-gradient(to right, rgba(0,0,0,0.95), rgb(214, 195, 153, 0.16));
+    background-image: conic-gradient(from -135deg at -5% 50%, transparent, black);
 }
 
 .boxshadow {
@@ -121,11 +153,33 @@ button {
 }
 
 .github {
-    background-color: rgb(46, 57, 72);
+    background-color: rgb(23, 21, 21);
 }
 
 .twitter {
     background-color: rgb(26, 140, 216);
+}
+
+.pfp {
+    background-image: url(https://avatars3.githubusercontent.com/juicermv);
+    filter: hue-rotate(0turn);
+    background-size: 50%;
+    background-position: center;
+    background-attachment:scroll;
+    background-blend-mode: difference;
+    background-repeat: no-repeat;
+    animation-name: hueanim;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hueanim {
+    from {
+        filter: hue-rotate(-1turn);
+    } to {
+        filter: hue-rotate(1turn);
+    }
 }
 
 .socialsbar {
