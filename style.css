@@ -17,7 +17,6 @@ html {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    box-shadow: 0 0px 6px rgba(0,0,0,0.16), 0 0px 6px rgba(0,0,0,0.23);
 }
 
 .subsection {
@@ -168,6 +167,9 @@ button {
     background-attachment:scroll;
     background-blend-mode: difference;
     background-repeat: no-repeat;
+}
+
+.hueanim {
     animation-name: hueanim;
     animation-duration: 5s;
     animation-timing-function: linear;
