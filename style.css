@@ -1,224 +1,87 @@
-body {
-    margin: 0;
+* {
     font-family: Roboto;
-    overflow-y: hidden;
-    font-size: large;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-.section {
-    height: 100vh;
+body {
     margin: 0;
+    background-color: burlywood;
     color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-}
-
-.subsection {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    height: 100%;
-    padding: 0 2.5em;
-    margin: 0;
-}
-
-
-
-.text-shadow {
-    text-shadow: 0px 0px 2px black, 0px 0px 2px black;
-}
-
-.text-shadow-alt {
-    text-shadow: 0px 0px 0.5em rgba(0, 0, 0, 0.16), 0px 0px 0.5em rgba(0, 0, 0, 0.16);
-}
-
-.caption {
-    font-weight: lighter;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.caption * {
-    padding: 0.7em 0.5em;
-    margin: 0.2em auto;
-}
-
-
-.title {
-    backdrop-filter: blur(1em);
-    border-radius: 8px;
-    padding: 0.5em 0.7em;
-}
-
-.column{
-    flex-direction: column;
-}
-
-.marge {
-    margin: auto;
-    margin-top: 3em;
-    margin-bottom: 0;
-}
-
-.bg1 {
-    background-image: url("assets/bg1.png");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 300vh;
-    z-index: -1;
-    animation-name: bg1;
-    animation-duration: 240s;
-    animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier();
-}
-
-@keyframes bg1 {
-    0% {
-        background-position: top center;
-    } 
-    50% {
-        background-position: bottom center;
-    }
-    100% {
-        background-position: top center;
-    }
-}
-
-.bg2 {
-    background-color: firebrick;
-    z-index: 1;
-}
-
-.bg3 {
-    background-image: url("assets/bg3.png");
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: 300vh;
-    z-index: -1;
-    background-color: rgb(214, 195, 153);
-    animation-name: bg3;
-    animation-duration: 240s;
-    animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier();
-}
-
-@keyframes bg3 {
-    0% {
-        background-position: bottom right;
-    } 
-    50% {
-        background-position: top left;
-    }
-    100% {
-        background-position: bottom right;
-    }
-}
-
-.bgblur {
-    backdrop-filter: blur(1em) saturate(150%);
-}
-
-.grad {
-    background-image: conic-gradient(from -135deg at -5% 50%, transparent, black);
-}
-
-.boxshadow {
-    box-shadow: 0 0px 6px rgba(0,0,0,0.16), 0 0px 6px rgba(0,0,0,0.23);
-}
-
-.pricedown {
-    font-family: Pricedown;
+    justify-content: space-between;
+    height: 100vh;
 }
 
 button {
-    border-radius: 0em;
-    border: 0.15em white solid;
-    backdrop-filter: blur(1em);
+    border: none;
+    border-radius: 14px;
+    background-color: royalblue;
     color: white;
-    background-color: transparent;
     padding: 0.5em 0.7em;
-    box-shadow: 0 0px 6px rgba(0,0,0,0.16), 0 0px 6px rgba(0,0,0,0.23);
-    animation-name: reversehoveranim;
-    animation-duration: 400ms;
+    box-shadow: rgba(0, 0, 0, 0.33) 0 0 0.5em;
+    transition: linear 100ms;
 }
 
-.github {
-    background-color: rgb(23, 21, 21);
+button:hover {
+    transition: linear 100ms;
+    cursor: pointer;
+    background-color: lightskyblue;
+    color: dimgray;
 }
 
-.twitter {
-    background-color: rgb(26, 140, 216);
+.header {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: flex-start;
+    gap: 1em;
+    margin: 2em 4em;
 }
 
 .pfp {
     background-image: url(https://avatars3.githubusercontent.com/juicermv);
-    filter: hue-rotate(0turn);
-    background-size: 50%;
+    background-size: 100%;
     background-position: center;
-    background-attachment:scroll;
-    background-blend-mode: difference;
+    background-attachment:local;
     background-repeat: no-repeat;
+    background-clip: border-box;
+    border-radius: 100%;
+    width: 5em;
+    height: 5em;
 }
 
-.hueanim {
-    animation-name: hueanim;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+.title {
+    border-bottom: white 0.06em solid;
 }
 
-@keyframes hueanim {
-    from {
-        filter: hue-rotate(-1turn);
-    } to {
-        filter: hue-rotate(1turn);
-    }
+.content {
+    padding: 2em 4em;
+    box-shadow: rgba(0, 0, 0, 0.33) 0 0 0.5em;
+    width: 45%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: gainsboro;
+    color: darkslategray;
+    border-radius: 0 110px 110px 0;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.socialsbar {
+.footer {
+    margin: 2em 4em;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: flex-start;
+    gap: 1em;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.socialsbar * {
-    margin: 0.5em;
-}
-
-.outline {
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-button:hover{
-    cursor: pointer;
-    animation-name: hoveranim;
-    animation-duration: 500ms;
-    border-width: 00.2em;
-}
-
-@keyframes hoveranim {
-    from {
-        border-width: 0.15em;
-    } to {
-        border-width: 0.2em;
-    }
-}
-
-@keyframes reversehoveranim {
-    to {
-        border-width: 0.15em;
-    } from {
-        border-width: 0.2em;
-    }
+.bolder {
+    font-weight: normal;
+    font-size: larger;
 }
