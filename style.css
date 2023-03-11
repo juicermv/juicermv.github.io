@@ -8,18 +8,22 @@ html {
 
 body {
     margin: 0;
-    background-color: burlywood;
-    color: white;
     display: flex;
+    height: 100vh;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    height: 100;
+    color: white;
+    background-image: url("https://bing.biturl.top/?format=image&index=random&region=random");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 button {
     border: none;
     border-radius: 14px;
-    background-color: royalblue;
+    background-color: rgba(65, 105, 225, 0.7);
+    backdrop-filter: blur(0.5em);
     color: white;
     padding: 0.5em 0.7em;
     box-shadow: rgba(0, 0, 0, 0.33) 0 0 0.5em;
@@ -29,8 +33,7 @@ button {
 button:hover {
     transition: linear 100ms;
     cursor: pointer;
-    background-color: lightskyblue;
-    color: dimgray;
+    background-color: rgba(135, 206, 250, 0.7);
 }
 
 .header {
@@ -56,6 +59,8 @@ button:hover {
 
 .title {
     border-bottom: white 0.06em solid;
+    backdrop-filter: blur(0.5em);
+    padding: 0.2em;
 }
 
 .content {
@@ -66,7 +71,8 @@ button:hover {
     height: 25%;
     display: flex;
     flex-direction: column;
-    background-color: gainsboro;
+    background-color: rgba(220, 220, 220, 0.7);
+    backdrop-filter: blur(0.5em);
     color: darkslategray;
     border-radius: 0 110px 110px 0;
     justify-content: center;
@@ -85,4 +91,13 @@ button:hover {
 .bolder {
     font-weight: normal;
     font-size: larger;
+}
+
+.credit {
+    font-size: xx-small;
+    padding: 1em;
+}
+
+.credit a {
+    color: cornflowerblue;
 }
