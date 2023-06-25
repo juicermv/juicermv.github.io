@@ -1,5 +1,82 @@
+/* https://gist.github.com/Albert221/753d7f8955eeb6f5e50486fce048e39f Thanks :) */
+
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Bold-Italic.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Bold-Italic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-ExtraBold-Italic.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-ExtraBold-Italic.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-ExtraBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Italic.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Medium-Italic.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Medium-Italic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Medium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
 * {
-    font-family: Roboto;
+    font-family: 'Jetbrains Mono';
 }
 
 html {
@@ -11,11 +88,13 @@ body {
     display: flex;
     height: 100vh;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: stretch;
+    align-items: center;
     height: 100;
-    color: white;
+    color: gainsboro;
     background-image: url("https://bing.biturl.top/?format=image&index=random&region=random");
     background-size: cover;
+    backdrop-filter: grayscale(100%);
     background-repeat: no-repeat;
 }
 
@@ -39,8 +118,8 @@ button:hover {
 .header {
     display: flex;
     flex-direction: row;
-    align-content: stretch;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 1em;
     margin: 2em 4em;
 }
@@ -58,25 +137,23 @@ button:hover {
 }
 
 .title {
-    border-bottom: white 0.06em solid;
-    backdrop-filter: blur(0.5em);
     padding: 0.2em;
+    font-size: 2em;
+}
+
+.tagline {
+    font-size:2em;
+    padding: 2em 0;
+    width: 70%;
 }
 
 .content {
-    padding: 2em 4em;
-    box-shadow: rgba(0, 0, 0, 0.33) 0 0 0.5em;
-    width: fit-content;
-    min-width: 45%;
-    height: 25%;
+    background-color: black;
+    padding: 1.5em 2em;
     display: flex;
     flex-direction: column;
-    background-color: rgba(220, 220, 220, 0.7);
-    backdrop-filter: blur(0.5em);
-    color: darkslategray;
-    border-radius: 0 110px 110px 0;
-    justify-content: center;
-    align-items:flex-end;
+    width: 50%;
+    height: 100%;
 }
 
 .footer {
@@ -94,10 +171,34 @@ button:hover {
 }
 
 .credit {
-    font-size: xx-small;
+    color:gainsboro;
+    font-size: x-small;
     padding: 1em;
+    align-self:flex-end;
+    justify-self: flex-end;
 }
 
 .credit a {
-    color: cornflowerblue;
+    color:gainsboro;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.credit a :hover {
+    cursor:pointer;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: flex-start;
+    gap: 0.5em;
+}
+
+.links a {
+    border: 0.15em gainsboro solid;
+    padding: 0.3em;
+    color: gainsboro;
+    text-decoration: none;
 }

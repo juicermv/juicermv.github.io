@@ -5,33 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="icon" type="image/png" href="https://avatars3.githubusercontent.com/juicermv?v=3&amp;s=32">
     <title>Juicermv</title>
+
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var image = JSON.parse(this.responseText);
+
+                document.getElementById("credit").innerHTML = `<a href="${image["copyright_link"]}">${image["copyright"]}</a> | This background was generated with the help of <a href="https://github.com/TimothyYe/bing-wallpaper">TimothyYe/bing-wallpaper</a>`
+                document.getElementById("body").style.backgroundImage = `url("${image["url"]}")`
+            }
+        };
+        xmlhttp.open("GET", "https://bing.biturl.top/?format=json&index=random&region=random", true);
+        xmlhttp.send();
+    </script>
 </head>
-<body>
-    <div class="header">
-        <div class="pfp"></div>
-        <h1 class="title">Juicermv</h1>
-    </div>
+<body id="body">
     <div class="content">
-        <div>
-            <p class="bolder">Hi, my name is Juicer.</p>
-            <p>I force computers to do things at gunpoint.</p>
+        <div class="header">
+            <div class="pfp"></div>
+            <div class="title">Juicermv</div>
         </div>
+        
+        <p class="tagline">The personal computer's worst enemy.</p>
+
+        <div>
+            <p>My things:</p>
+            <div class="links">
+                <a href="https://github.com/juicermv">GitHub</a>
+                <a href="https://twitter.com/juicermv">Twitter</a>
+                <a href="https://github.com/juicermv/GTA-GPS-Redux">GTA San Andreas: GPS Redux</a>
+            </div>
+        </div>
+        
+        <p id = "credit" class="credit"></p>
     </div>
-    <div class="footer">
-        <p class="bolder title">Projects & Socials:</p>
-        <button
-            onclick="window.open('https://twitter.com/juicermv')"
-            >Twitter</button>
-        <button
-        onclick="window.open('https://github.com/juicermv')"
-            >GitHub</button>
-        <button
-        onclick="window.open('https://github.com/juicermv/GTA-GPS-Redux')"
-            >SA GPS Redux</button>
-    </div>
-    <p class="credit">This background was generated with the help of <a href="https://github.com/TimothyYe/bing-wallpaper">TimothyYe/bing-wallpaper</a></p>
+
+    
 </body>
 </html>
