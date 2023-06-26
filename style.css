@@ -96,6 +96,7 @@ body {
     background-size: cover;
     backdrop-filter: grayscale(100%);
     background-repeat: no-repeat;
+    background-color: black;
 }
 
 button {
@@ -152,8 +153,9 @@ button:hover {
     padding: 1.5em 2em;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 25%;
     height: 100%;
+    box-shadow: 0 4px 1.5em rgba(0, 0, 0, 0.33), 0px 0 1.5em rgba(0, 0, 0, 0.33);
 }
 
 .footer {
@@ -174,8 +176,7 @@ button:hover {
     color:gainsboro;
     font-size: x-small;
     padding: 1em;
-    align-self:flex-end;
-    justify-self: flex-end;
+    text-align: center;
 }
 
 .credit a {
