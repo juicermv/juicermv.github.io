@@ -14,6 +14,10 @@ import Projects from './pages/Projects'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 
+// Fonts
+import '@fontsource/inter'
+import '@fontsource-variable/jetbrains-mono'
+
 function App() {
 	const [page, setPage] = useState('')
 
