@@ -64,7 +64,7 @@ export default function Projects() {
 								PLUGIN_SDK_PATH via the included installer.
 							</div>
 							<p className='card-text'>
-								Prebuilt PluginSDK libraries for VSS2022. Source
+								Prebuilt PluginSDK libraries for VS2022. Source
 								by DK22Pac.
 							</p>
 
