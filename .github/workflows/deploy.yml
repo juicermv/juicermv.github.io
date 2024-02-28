@@ -13,10 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: npm i
+      - name: Install Bun
+        run: curl -fsSL https://bun.sh/install | bash
+
+      - run: bun install
         working-directory: ${{github.workspace}}
 
-      - run: npm run build
+      - run: bun run build
         working-directory: ${{github.workspace}}
 
       - uses: actions/upload-pages-artifact@v3
