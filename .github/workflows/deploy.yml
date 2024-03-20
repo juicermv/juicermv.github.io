@@ -12,8 +12,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
-      - run: bun run build
+
+      - run: bun install
+        working-directory: ${{github.workspace}}
+        
+      - run: bunx --bun vite build
         working-directory: ${{github.workspace}}
 
       - uses: actions/upload-pages-artifact@v3
