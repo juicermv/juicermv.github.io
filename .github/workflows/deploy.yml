@@ -8,17 +8,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install Bun
-        run: npm i -g bun
-
-      - run: bun install
-        working-directory: ${{github.workspace}}
-
+      
       - run: bun run build
         working-directory: ${{github.workspace}}
 
