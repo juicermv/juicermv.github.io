@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "bunx --bun vite",
+    "build": "bunx --bun vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -13,7 +13,7 @@
     "@fontsource-variable/jetbrains-mono": "^5.0.19",
     "@fontsource/inter": "^5.0.16",
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.2",
+    "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

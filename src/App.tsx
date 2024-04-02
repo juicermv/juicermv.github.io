@@ -32,17 +32,23 @@ function App() {
 		}
 	}
 
+	// Check if user prefers dark theme. Copied over from Bootstrap examples.
+	document.documentElement.setAttribute(
+		'data-bs-theme',
+		window.matchMedia('(prefers-color-scheme: dark)').matches
+			? 'dark'
+			: 'light'
+	)
+
 	return (
 		<>
 			<div className='tw-flex tw-h-full tw-flex-col tw-justify-between tw-content-stretch'>
 				<NavBar
-					title='Juicermv'
 					_default='Home'
 					source={['Home', 'Projects']}
 					onItemClicked={(item) => {
 						setPage(item.toLowerCase())
 					}}
-					onTitleClicked={() => {}}
 				/>
 				<div className='tw-w-full tx-h-full'>{getPage(page)}</div>
 				<Footer />

@@ -1,34 +1,22 @@
 import { useState } from 'react'
 
 interface NavBarProps {
-	title: string
 	_default: string
 	source: string[]
 	onItemClicked: (itemName: string) => void
-	onTitleClicked: () => void
 }
 
 export default function NavBar({
-	title,
 	_default,
 	source,
 	onItemClicked,
-	onTitleClicked,
 }: NavBarProps) {
 	const [current, setCurrent] = useState(_default)
 
 	return (
 		<>
-			<nav className='navbar navbar-expand-md text-bg-light bg-light shadow px-5'>
+			<nav className='navbar navbar-expand-lg bg-body'>
 				<div className='container-fluid'>
-					<a
-						className='navbar-brand'
-						onClick={() => {
-							onTitleClicked()
-						}}
-					>
-						{title}
-					</a>
 					<button
 						className='navbar-toggler'
 						type='button'
@@ -49,7 +37,7 @@ export default function NavBar({
 								if (item === current) {
 									return (
 										<a
-											className='nav-link active text-primary'
+											className='nav-link active text-body-emphasis'
 											key={item}
 											href={'#'}
 										>
@@ -59,7 +47,7 @@ export default function NavBar({
 								} else {
 									return (
 										<a
-											className='nav-link'
+											className='nav-link fw-light text-body'
 											key={item}
 											onClick={() => {
 												onItemClicked(item)

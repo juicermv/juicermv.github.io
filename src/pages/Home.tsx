@@ -10,7 +10,11 @@ export default function Home() {
 						<br />
 						I am proficient with C++, C#, Python, and Node.js.
 						<br />
-						Head over to <b>Projects</b> to see my works.
+						Head over to{' '}
+						<div className='d-inline text-body-emphasis'>
+							Projects
+						</div>{' '}
+						to see my works.
 					</span>
 				</div>
 
