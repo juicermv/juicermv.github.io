@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useMotionValueEvent, useScroll } from 'framer-motion'
 
 interface NavBarProps {
 	_default: string
@@ -12,13 +13,26 @@ export default function NavBar({
 	onItemClicked,
 }: NavBarProps) {
 	const [current, setCurrent] = useState(_default)
+	const { scrollY } = useScroll()
+	const [classes, setClasses] = useState(
+		'navbar navbar-expand-lg bg-body sticky-top'
+	)
+
+	useMotionValueEvent(scrollY, 'change', (latest) => {
+		console.log(latest)
+		if (latest > 0) {
+			setClasses('navbar navbar-expand-lg bg-body-tertiary sticky-top')
+		} else {
+			setClasses('navbar navbar-expand-lg bg-body sticky-top')
+		}
+	})
 
 	return (
 		<>
-			<nav className='navbar navbar-expand-lg bg-body'>
+			<nav className={classes}>
 				<div className='container-fluid'>
 					<button
-						className='navbar-toggler'
+						className='navbar-toggler border-0 p-2'
 						type='button'
 						data-bs-toggle='collapse'
 						data-bs-target='#navbarNavAltMarkup'
