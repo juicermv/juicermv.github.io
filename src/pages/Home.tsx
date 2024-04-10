@@ -1,3 +1,5 @@
+import pfp from 'https://github.com/juicermv.png'
+
 export default function Home() {
 	return (
 		<>
@@ -19,7 +21,7 @@ export default function Home() {
 				</div>
 
 				<img
-					src='https://github.com/juicermv.png'
+					src={pfp}
 					alt='GitHub Profile Picture'
 					className='tw-flex-none'
 				/>

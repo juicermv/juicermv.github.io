@@ -47,7 +47,7 @@ function App() {
 					_default='Home'
 					source={['Home', 'Projects']}
 					onItemClicked={(item) => {
-						setPage(item.toLowerCase())
+						setPage(item)
 					}}
 				/>
 				<div className='tw-w-full tx-h-full'>{getPage(page)}</div>
