@@ -32,7 +32,7 @@ export default function NavBar({
 			<nav className={classes}>
 				<div className='container-fluid'>
 					<button
-						className='navbar-toggler border-0 p-2'
+						className='navbar-toggler focus-ring border-0 p-2'
 						type='button'
 						data-bs-toggle='collapse'
 						data-bs-target='#navbarNavAltMarkup'

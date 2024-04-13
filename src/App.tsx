@@ -1,5 +1,5 @@
 import './App.css'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 
 // Bootstrap
 import 'bootstrap/dist/js/bootstrap.js'
@@ -9,6 +9,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 // Pages
 import Home from './pages/Home'
 import Projects from './pages/Projects'
+import GPS from './pages/GPS'
 
 // Components
 import NavBar from './components/NavBar'
@@ -25,32 +26,36 @@ function App() {
 		switch (name.toLowerCase()) {
 			case 'home':
 				return <Home />
-			case 'projects':
+			case 'other projects':
 				return <Projects />
+			case 'gps':
+				return <GPS />
 			default:
 				return <Home />
 		}
 	}
 
-	// Check if user prefers dark theme. Copied over from Bootstrap examples.
-	document.documentElement.setAttribute(
-		'data-bs-theme',
-		window.matchMedia('(prefers-color-scheme: dark)').matches
-			? 'dark'
-			: 'light'
-	)
+	useEffect(() => {
+		// Check if user prefers dark theme. Copied over from Bootstrap examples.
+		document.documentElement.setAttribute(
+			'data-bs-theme',
+			window.matchMedia('(prefers-color-scheme: dark)').matches
+				? 'dark'
+				: 'light'
+		)
+	}, [])
 
 	return (
 		<>
 			<div className='tw-flex tw-h-full tw-flex-col tw-justify-between tw-content-stretch'>
 				<NavBar
 					_default='Home'
-					source={['Home', 'Projects']}
+					source={['Home', 'GPS', 'Other Projects']}
 					onItemClicked={(item) => {
 						setPage(item)
 					}}
 				/>
-				<div className='tw-w-full tx-h-full'>{getPage(page)}</div>
+				<div className='tw-w-full'>{getPage(page)}</div>
 				<Footer />
 			</div>
 		</>

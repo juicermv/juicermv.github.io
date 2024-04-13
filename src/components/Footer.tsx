@@ -3,8 +3,9 @@ export default function Footer() {
 		<>
 			<div className='tw-py-2 text-body bg-body'>
 				<div className='container-fluid'>
-					Copyright 2024 juicermv. Built in React using Bun, Bootstrap
-					and Tailwind.
+					<a href='https://www.github.com/juicermv/juicermv.github.io'>
+						Source
+					</a>
 				</div>
 			</div>
 		</>
