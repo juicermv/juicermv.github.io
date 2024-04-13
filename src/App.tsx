@@ -37,15 +37,12 @@ function App() {
 		}
 	])
 
-	useEffect(() => {
-		// Check if user prefers dark theme. Copied over from Bootstrap examples.
-		document.documentElement.setAttribute(
-			'data-bs-theme',
-			window.matchMedia('(prefers-color-scheme: dark)').matches
-				? 'dark'
-				: 'light'
-		)
-	}, [])
+	document.documentElement.setAttribute(
+		'data-bs-theme',
+		window.matchMedia('(prefers-color-scheme: dark)').matches
+			? 'dark'
+			: 'light'
+	)
 
 	return (
 		<>
