@@ -11,7 +11,7 @@ export default function Projects({setCurrent}:ProjectsProps) {
 				<div className='tw-flex tw-flex-col tw-content-stretch text-center tw-m-auto'>
 					<h1>
 						<i className='bi bi-gear-wide-connected tw-mr-2'></i>
-						Projects.
+						Projects
 					</h1>
 					<span className='text-wrap'>
 						Here you can find the random things I spend my free time
