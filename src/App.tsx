@@ -18,22 +18,23 @@ import Footer from './components/Footer'
 // Fonts
 import '@fontsource/inter'
 import '@fontsource-variable/jetbrains-mono'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 function App() {
-	const [page, setPage] = useState('')
-
-	function getPage(name: string): ReactNode {
-		switch (name.toLowerCase()) {
-			case 'home':
-				return <Home />
-			case 'other projects':
-				return <Projects />
-			case 'gps':
-				return <GPS />
-			default:
-				return <Home />
+	const router = createBrowserRouter([
+		{
+			path: '/',
+			element: <Home/>
+		},
+		{
+			path: 'gps',
+			element: <GPS/>
+		},
+		{
+			path: 'other projects',
+			element: <Projects/>
 		}
-	}
+	])
 
 	useEffect(() => {
 		// Check if user prefers dark theme. Copied over from Bootstrap examples.
@@ -52,10 +53,11 @@ function App() {
 					_default='Home'
 					source={['Home', 'GPS', 'Other Projects']}
 					onItemClicked={(item) => {
-						setPage(item)
+						router.navigate(item.toLowerCase() == 'home' ? '/' : '/'+item)
 					}}
 				/>
-				<div className='tw-w-full'>{getPage(page)}</div>
+				
+				<div className='tw-w-full'><RouterProvider router={router} /></div>
 				<Footer />
 			</div>
 		</>

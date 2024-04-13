@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 interface NavBarProps {
 	_default: string
@@ -48,31 +49,18 @@ export default function NavBar({
 					>
 						<div className='navbar-nav'>
 							{source.map((item) => {
-								if (item === current) {
-									return (
-										<a
-											className='nav-link active text-body-emphasis'
-											key={item}
-											href={'#'}
-										>
-											{item}
-										</a>
-									)
-								} else {
-									return (
-										<a
-											className='nav-link fw-light text-body'
-											key={item}
-											onClick={() => {
-												onItemClicked(item)
-												setCurrent(item)
-											}}
-											href={'#'}
-										>
-											{item}
-										</a>
-									)
-								}
+								return (
+									<a
+										className={'nav-link active tw-cursor-pointer ' + (item == current ? 'text-body-emphasis' : 'text-body')}
+										key={item}
+										onClick={()=>{
+											setCurrent(item)
+											onItemClicked(item)
+										}}
+									>
+										{item}
+									</a>
+								)
 							})}
 						</div>
 					</div>
