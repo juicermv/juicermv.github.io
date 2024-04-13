@@ -1,4 +1,10 @@
-export default function Projects() {
+import { Link } from "react-router-dom";
+
+interface ProjectsProps {
+	setCurrent: (current: string) => void
+}
+export default function Projects({setCurrent}:ProjectsProps) {
+	setCurrent('Other Projects')
 	return (
 		<>
 			<div className='p-4 tw-flex tw-flex-row tw-flex-wrap text-bg-body bg-body tw-items-center tw-justify-between gap-4'>
@@ -33,12 +39,12 @@ export default function Projects() {
 							</p>
 
 							<div className='btn-group'>
-								<a
-									href='https://github.com/juicermv/plugin-sdk/releases/latest/download/release.zip'
+								<Link
+									to='https://github.com/juicermv/plugin-sdk/releases/latest/download/release.zip'
 									className='btn btn-outline-primary bi bi-download '
-								></a>
-								<a
-									href='https://github.com/DK22Pac/Plugin-SDK'
+								></Link>
+								<Link
+									to='https://github.com/DK22Pac/Plugin-SDK'
 									className='btn btn-outline-primary bi bi-github '
 								/>
 							</div>
@@ -56,10 +62,10 @@ export default function Projects() {
 								behavior similar to GTA V's.
 							</p>
 							<div className='btn-group'>
-								<a
-									href='https://github.com/Juicermv/AutoHealSA'
+								<Link
+									to='https://github.com/Juicermv/AutoHealSA'
 									className='btn btn-outline-primary bi bi-github '
-								></a>
+								></Link>
 							</div>
 						</div>
 					</div>

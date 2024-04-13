@@ -21,18 +21,19 @@ import '@fontsource-variable/jetbrains-mono'
 import { RouterProvider, createHashRouter } from 'react-router-dom'
 
 function App() {
+	const [current, setCurrent] = useState('')
 	const router = createHashRouter([
 		{
 			path: '/',
-			element: <Home/>
+			element: <Home setCurrent={setCurrent}/>
 		},
 		{
 			path: 'gps',
-			element: <GPS/>
+			element: <GPS setCurrent={setCurrent}/>
 		},
 		{
 			path: 'other projects',
-			element: <Projects/>
+			element: <Projects setCurrent={setCurrent}/>
 		}
 	])
 
@@ -50,11 +51,12 @@ function App() {
 		<>
 			<div className='tw-flex tw-h-full tw-flex-col tw-justify-between tw-content-stretch'>
 				<NavBar
-					_default='Home'
+					_current={current}
 					source={['Home', 'GPS', 'Other Projects']}
 					onItemClicked={(item) => {
 						router.navigate(item.toLowerCase() == 'home' ? '/' : '/'+item)
 					}}
+					
 				/>
 				
 				<div className='tw-w-full'><RouterProvider router={router} /></div>

@@ -1,23 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
-import { Link } from 'react-router-dom'
 
 interface NavBarProps {
-	_default: string
+	_current: string
 	source: string[]
 	onItemClicked: (itemName: string) => void
 }
 
 export default function NavBar({
-	_default,
+	_current,
 	source,
 	onItemClicked,
 }: NavBarProps) {
-	const [current, setCurrent] = useState(_default)
+	const [current, setCurrent] = useState('')
 	const { scrollY } = useScroll()
 	const [classes, setClasses] = useState(
 		'navbar navbar-expand-lg bg-body sticky-top'
 	)
+
+	useEffect(()=>{
+		setCurrent(_current)
+	},[_current])
 
 	useMotionValueEvent(scrollY, 'change', (latest) => {
 		console.log(latest)
@@ -51,10 +54,9 @@ export default function NavBar({
 							{source.map((item) => {
 								return (
 									<a
-										className={'nav-link active tw-cursor-pointer ' + (item == current ? 'text-body-emphasis' : 'text-body')}
+										className={'nav-link active tw-cursor-pointer ' + (item.toLowerCase() === current.toLowerCase() ? 'text-body-emphasis' : 'text-body')}
 										key={item}
 										onClick={()=>{
-											setCurrent(item)
 											onItemClicked(item)
 										}}
 									>

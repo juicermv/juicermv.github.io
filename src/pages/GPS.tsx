@@ -1,8 +1,13 @@
 import sc3 from '../assets/sc3c.png'
 import sc2 from '../assets/sc2c.png'
 import sc1 from '../assets/sc1c.png'
+import { Link } from 'react-router-dom'
 
-export default function GPS() {
+interface GPSProps {
+	setCurrent: (current: string) => void
+}
+export default function GPS({setCurrent}:GPSProps) {
+	setCurrent('GPS')
 	return (
 		<>
 			<div className='p-4 tw-flex tw-flex-row tw-flex-wrap text-bg-body bg-body tw-items-center tw-justify-between gap-4'>
@@ -17,14 +22,14 @@ export default function GPS() {
 						mission objectives and the player's waypoint.
 					</span>
 					<div className='btn-group tw-mt-4 tw-mx-auto'>
-						<a
-							href='https://github.com/juicermv/GTA-GPS-Redux/releases/latest/download/GPS_Redux.zip'
+						<Link
+							to='https://github.com/juicermv/GTA-GPS-Redux/releases/latest/download/GPS_Redux.zip'
 							className='btn btn-outline-primary bi bi-download '
-						></a>
-						<a
-							href='https://github.com/Juicermv/GTA-GPS-Redux'
+						></Link>
+						<Link
+							to='https://github.com/Juicermv/GTA-GPS-Redux'
 							className='btn btn-outline-primary bi bi-github '
-						></a>
+						></Link>
 					</div>
 
 					<div className='tw-flex tw-flex-row tw-justify-center gap-4 tw-items-center tw-flex-wrap tw-mt-4'>
