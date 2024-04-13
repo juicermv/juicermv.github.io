@@ -18,10 +18,10 @@ import Footer from './components/Footer'
 // Fonts
 import '@fontsource/inter'
 import '@fontsource-variable/jetbrains-mono'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createHashRouter } from 'react-router-dom'
 
 function App() {
-	const router = createBrowserRouter([
+	const router = createHashRouter([
 		{
 			path: '/',
 			element: <Home/>
