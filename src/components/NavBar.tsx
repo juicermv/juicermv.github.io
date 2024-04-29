@@ -1,39 +1,29 @@
 import { useEffect, useState } from 'react'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
+import { Router } from '@remix-run/router'
+import { To, useLocation } from 'react-router'
 
 interface NavBarProps {
-	_current: string
-	source: string[]
-	onItemClicked: (itemName: string) => void
+	router: Router
 }
 
-export default function NavBar({
-	_current,
-	source,
-	onItemClicked,
-}: NavBarProps) {
+export default function NavBar({ router }: NavBarProps) {
 	const [current, setCurrent] = useState('')
 	const { scrollY } = useScroll()
-	const [classes, setClasses] = useState(
-		'navbar navbar-expand-lg bg-body sticky-top'
-	)
-
-	useEffect(()=>{
-		setCurrent(_current)
-	},[_current])
+	const [classes, setClasses] = useState('')
 
 	useMotionValueEvent(scrollY, 'change', (latest) => {
 		console.log(latest)
 		if (latest > 0) {
-			setClasses('navbar navbar-expand-lg bg-body-tertiary sticky-top')
+			setClasses('bg-body-tertiary')
 		} else {
-			setClasses('navbar navbar-expand-lg bg-body sticky-top')
+			setClasses('bg-body')
 		}
 	})
 
 	return (
 		<>
-			<nav className={classes}>
+			<nav className={'navbar navbar-expand-lg sticky-top ' + classes}>
 				<div className='container-fluid'>
 					<button
 						className='navbar-toggler focus-ring border-0 p-2'
@@ -50,21 +40,38 @@ export default function NavBar({
 						className='collapse navbar-collapse'
 						id='navbarNavAltMarkup'
 					>
-						<div className='navbar-nav'>
-							{source.map((item) => {
-								return (
-									<a
-										className={'nav-link active tw-cursor-pointer ' + (item.toLowerCase() === current.toLowerCase() ? 'text-body-emphasis' : 'text-body')}
-										key={item}
-										onClick={()=>{
-											onItemClicked(item)
-										}}
-									>
-										{item}
-									</a>
-								)
+						<ul className='navbar-nav me-auto mb-2 mb-lg-0'>
+							{router.routes.map((route) => {
+								if (route.id !== 'NotFound')
+									return (
+										<li>
+											{' '}
+											<a
+												className={
+													'nav-link active tw-cursor-pointer ' +
+													(route.id.toLowerCase() ===
+													current.toLowerCase()
+														? 'text-body-emphasis'
+														: 'text-body')
+												}
+												key={route.id}
+												onClick={() => {
+													router.navigate(
+														route.path as To
+													)
+													setCurrent(route.id)
+												}}
+											>
+												{route.id}
+											</a>
+										</li>
+									)
 							})}
-						</div>
+						</ul>
+						<a
+							href='https://www.github.com/juicermv/juicermv.github.io'
+							className='btn btn-outline-primary bi bi-github'
+						/>
 					</div>
 				</div>
 			</nav>

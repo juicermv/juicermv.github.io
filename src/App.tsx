@@ -1,10 +1,7 @@
-import './App.css'
 import { ReactNode, useEffect, useState } from 'react'
 
 // Bootstrap
-import 'bootstrap/dist/js/bootstrap.js'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 
 // Pages
 import Home from './pages/Home'
@@ -13,28 +10,37 @@ import GPS from './pages/GPS'
 
 // Components
 import NavBar from './components/NavBar'
-import Footer from './components/Footer'
 
 // Fonts
 import '@fontsource/inter'
 import '@fontsource-variable/jetbrains-mono'
 import { RouterProvider, createHashRouter } from 'react-router-dom'
 
+import './App.css'
+import NotFound from './pages/NotFound'
+
 function App() {
-	const [current, setCurrent] = useState('')
 	const router = createHashRouter([
 		{
 			path: '/',
-			element: <Home setCurrent={setCurrent}/>
+			id: 'Home',
+			element: <Home />,
 		},
 		{
-			path: 'gps',
-			element: <GPS setCurrent={setCurrent}/>
+			path: '/gps',
+			id: 'GPS Redux',
+			element: <GPS />,
 		},
 		{
-			path: 'other projects',
-			element: <Projects setCurrent={setCurrent}/>
-		}
+			path: '/projects',
+			id: 'Other Projects',
+			element: <Projects />,
+		},
+		{
+			path: '*',
+			id: 'NotFound',
+			element: <NotFound />,
+		},
 	])
 
 	document.documentElement.setAttribute(
@@ -46,18 +52,11 @@ function App() {
 
 	return (
 		<>
-			<div className='tw-flex tw-h-full tw-flex-col tw-justify-between tw-content-stretch'>
-				<NavBar
-					_current={current}
-					source={['Home', 'GPS', 'Other Projects']}
-					onItemClicked={(item) => {
-						router.navigate(item.toLowerCase() == 'home' ? '/' : '/'+item)
-					}}
-					
-				/>
-				
-				<div className='tw-w-full'><RouterProvider router={router} /></div>
-				<Footer />
+			<div className='tw-flex tw-h-full tw-flex-col tw-justify-stretch'>
+				<NavBar router={router} />
+				<div className='tw-w-full tw-my-auto tw-flex tw-flex-col tw-justify-center'>
+					<RouterProvider router={router} />
+				</div>
 			</div>
 		</>
 	)
