@@ -1,42 +1,43 @@
 name: Deploy GitHub Pages
 
 on:
-  push:
-    branches: ['main']
+    push:
+        branches: ['main']
 
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: self-hosted
+    build:
+        runs-on: self-hosted
 
-    steps:
-      - uses: actions/checkout@v4
+        steps:
+            - uses: actions/checkout@v4
 
-      - run: bun install
-        working-directory: ${{github.workspace}}
-        
-      - run: bunx --bun vite build
-        working-directory: ${{github.workspace}}
+            - run: bun upgrade
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ${{github.workspace}}/dist
-  
-  deploy:
-    needs: build
-    runs-on: self-hosted
+            - run: bun install
+              working-directory: ${{github.workspace}}
 
-    permissions:
-      pages: write
-      id-token: write
+            - run: bunx --bun vite build
+              working-directory: ${{github.workspace}}
 
+            - uses: actions/upload-pages-artifact@v3
+              with:
+                  path: ${{github.workspace}}/dist
 
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    deploy:
+        needs: build
+        runs-on: self-hosted
 
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        permissions:
+            pages: write
+            id-token: write
+
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
