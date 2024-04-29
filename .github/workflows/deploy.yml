@@ -18,7 +18,7 @@ jobs:
             - run: bun install
               working-directory: ${{github.workspace}}
 
-            - run: bunx --bun vite build
+            - run: bunx vite build # Bun doesn't support some things yet
               working-directory: ${{github.workspace}}
 
             - uses: actions/upload-pages-artifact@v3
