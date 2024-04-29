@@ -11,32 +11,32 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource-variable/jetbrains-mono": "^5.0.19",
-    "@fontsource/inter": "^5.0.16",
+    "@fontsource-variable/jetbrains-mono": "^5.0.21",
+    "@fontsource/inter": "^5.0.18",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "framer-motion": "^11.0.24",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router": "^6.22.3",
-    "react-router-dom": "^6.22.3",
-    "sass": "^1.69.7",
-    "three": "^0.163.0"
+    "framer-motion": "^11.1.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router": "^6.23.0",
+    "react-router-dom": "^6.23.0",
+    "sass": "^1.75..0",
+    "three": "^0.164.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@typescript-eslint/eslint-plugin": "^7.6.0",
-    "@typescript-eslint/parser": "^7.6.0",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
     "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^9.0.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "autoprefixer": "^10.4.19",
+    "eslint": "^9.1.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10"
   }
 }
