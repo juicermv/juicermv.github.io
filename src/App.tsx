@@ -1,5 +1,3 @@
-import { ReactNode, useEffect, useState } from 'react'
-
 // Bootstrap
 import 'bootstrap/dist/js/bootstrap.min.js'
 
@@ -12,8 +10,6 @@ import GPS from './pages/GPS'
 import NavBar from './components/NavBar'
 
 // Fonts
-import '@fontsource/inter'
-import '@fontsource-variable/jetbrains-mono'
 import { RouterProvider, createHashRouter } from 'react-router-dom'
 
 import './App.css'
@@ -53,7 +49,7 @@ function App() {
 	return (
 		<>
 			<div className='tw-flex tw-h-full tw-flex-col tw-justify-stretch'>
-				<NavBar router={router} />
+			<NavBar router={router} />
 				<div className='tw-w-full tw-my-auto tw-flex tw-flex-col tw-justify-center'>
 					<RouterProvider router={router} />
 				</div>

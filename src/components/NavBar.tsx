@@ -1,25 +1,27 @@
-import { useEffect, useState } from 'react'
-import { useMotionValueEvent, useScroll } from 'framer-motion'
-import { Router } from '@remix-run/router'
-import { To, useLocation } from 'react-router'
+import { useState } from 'react';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
+import { Router } from '@remix-run/router';
+import { To } from 'react-router';
 
 interface NavBarProps {
-	router: Router
+	router: Router;
 }
 
 export default function NavBar({ router }: NavBarProps) {
-	const [current, setCurrent] = useState('')
-	const { scrollY } = useScroll()
-	const [classes, setClasses] = useState('')
+	const { scrollY } = useScroll();
+	const [classes, setClasses] = useState('');
+	const [currentPath, setCurrentPath] = useState(
+		router.state.location.pathname
+	);
 
 	useMotionValueEvent(scrollY, 'change', (latest) => {
-		console.log(latest)
+		console.log(latest);
 		if (latest > 0) {
-			setClasses('bg-body-tertiary')
+			setClasses('bg-body-tertiary');
 		} else {
-			setClasses('bg-body')
+			setClasses('bg-body');
 		}
-	})
+	});
 
 	return (
 		<>
@@ -44,28 +46,29 @@ export default function NavBar({ router }: NavBarProps) {
 							{router.routes.map((route) => {
 								if (route.id !== 'NotFound')
 									return (
-										<li>
+										<li key={route.id}>
 											{' '}
 											<a
 												className={
 													'nav-link active tw-cursor-pointer ' +
-													(route.id.toLowerCase() ===
-													current.toLowerCase()
+													(route.path === currentPath
 														? 'text-body-emphasis'
 														: 'text-body')
 												}
-												key={route.id}
 												onClick={() => {
 													router.navigate(
 														route.path as To
-													)
-													setCurrent(route.id)
+													);
+
+													setCurrentPath(
+														route.path as string
+													);
 												}}
 											>
 												{route.id}
 											</a>
 										</li>
-									)
+									);
 							})}
 						</ul>
 						<a
@@ -76,5 +79,5 @@ export default function NavBar({ router }: NavBarProps) {
 				</div>
 			</nav>
 		</>
-	)
+	);
 }

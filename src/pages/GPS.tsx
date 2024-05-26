@@ -47,7 +47,7 @@ export default function GPS() {
 				</div>
 				<div className='tw-flex tw-flex-col tw-content-stretch text-center tw-gap-4'>
 					<div className='tw-flex-col tw-p-2 tw-flex tw-items-center tw-justify-center'>
-						<h1 className='fs-1'>San Andreas: GPS</h1>
+						<h1 className='fs-1 instrument-serif-regular-italic'>San Andreas: GPS</h1>
 						<h1 className='tw-text-xs alert alert-primary tw-p-1.5'>
 							<i className='bi bi-car-front-fill tw-mr-1.5' />
 							REDUX

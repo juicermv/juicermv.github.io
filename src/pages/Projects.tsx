@@ -5,7 +5,7 @@ export default function Projects() {
     <>
       <div className="p-4 tw-flex tw-flex-row tw-flex-wrap text-bg-body bg-body tw-items-center tw-justify-evenly gap-4">
         <div className="tw-flex tw-flex-col tw-content-stretch text-center">
-          <h1 className="fs-1">Projects</h1>
+          <h1 className="fs-1 instrument-serif-regular-italic">Projects.</h1>
           <span className="text-wrap fs-5">
             Some things I work on during my free time.
           </span>

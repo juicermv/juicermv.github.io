@@ -5,8 +5,7 @@ export default function Home() {
 		<>
 			<div className='p-4 tw-flex tw-flex-row tw-flex-wrap text-bg-body bg-body tw-items-center tw-justify-center gap-4'>
 				<div className='tw-flex tw-flex-col tw-content-start text-wrap tw-text-center gap-4'>
-					<h1 className='fs-1'>
-						<i className='bi bi-person-raised-hand tw-mr-2'></i>
+					<h1 className='fs-1 instrument-serif-regular-italic'>
 						Hello!
 					</h1>
 					<div className='fs-5'>
