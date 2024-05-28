@@ -1,11 +1,10 @@
-@import 'bootstrap/dist/css/bootstrap.css';
+@tailwind base;
+@tailwind utilities;
+
+@import 'custom.scss';
 @import 'bootstrap-icons/font/bootstrap-icons.css';
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://rsms.me/inter/inter.css');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 .instrument-serif-regular {
   font-family: "Instrument Serif", serif;
@@ -22,6 +21,7 @@
 * {
   font-family: Inter, sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1;
+  line-height: 1.2em;
 }
 
 @supports (font-variation-settings: normal) {
@@ -40,4 +40,3 @@
   font-weight: normal;
   font-style: normal;
 }
-

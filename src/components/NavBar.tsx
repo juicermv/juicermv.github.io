@@ -32,9 +32,6 @@ export default function NavBar({ router }: NavBarProps) {
 						type='button'
 						data-bs-toggle='collapse'
 						data-bs-target='#navbarNavAltMarkup'
-						aria-controls='navbarNavAltMarkup'
-						aria-expanded='false'
-						aria-label='Toggle navigation'
 					>
 						<span className='navbar-toggler-icon'></span>
 					</button>
@@ -42,7 +39,7 @@ export default function NavBar({ router }: NavBarProps) {
 						className='collapse navbar-collapse'
 						id='navbarNavAltMarkup'
 					>
-						<ul className='navbar-nav me-auto mb-2 mb-lg-0'>
+						<ul className='navbar-nav me-auto mb-2 mb-lg-0 tw-gap-1'>
 							{router.routes.map((route) => {
 								if (route.id !== 'NotFound')
 									return (
@@ -50,10 +47,10 @@ export default function NavBar({ router }: NavBarProps) {
 											{' '}
 											<a
 												className={
-													'nav-link active tw-cursor-pointer ' +
+													'nav-link active tw-cursor-pointer alert p-2 m-0 text-center' +
 													(route.path === currentPath
-														? 'text-body-emphasis'
-														: 'text-body')
+														? 'text-body-emphasis alert-primary'
+														: 'text-body ')
 												}
 												onClick={() => {
 													router.navigate(

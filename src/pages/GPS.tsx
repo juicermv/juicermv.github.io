@@ -1,12 +1,13 @@
-import sc3 from '../assets/sc3c.png'
-import sc2 from '../assets/sc2c.png'
-import sc1 from '../assets/sc1c.png'
-import { Link } from 'react-router-dom'
+import sc3 from '../assets/sc3c.png';
+import sc2 from '../assets/sc2c.png';
+import sc1 from '../assets/sc1c.png';
+import { Link } from 'react-router-dom';
+import Panel from '../components/Panel';
 
 export default function GPS() {
 	return (
 		<>
-			<div className='p-4 tw-flex tw-flex-row tw-flex-wrap-reverse text-bg-body bg-body tw-items-center tw-justify-evenly gap-4'>
+			<Panel className='p-4 tw-flex tw-flex-row tw-flex-wrap-reverse text-bg-body bg-body tw-items-center tw-justify-evenly gap-4'>
 				<div className='card-group'>
 					<div className='card tw-w-64'>
 						<img
@@ -47,8 +48,10 @@ export default function GPS() {
 				</div>
 				<div className='tw-flex tw-flex-col tw-content-stretch text-center tw-gap-4'>
 					<div className='tw-flex-col tw-p-2 tw-flex tw-items-center tw-justify-center'>
-						<h1 className='fs-1 instrument-serif-regular-italic'>San Andreas: GPS</h1>
-						<h1 className='tw-text-xs alert alert-primary tw-p-1.5'>
+						<h1 className='fs-1 instrument-serif-regular-italic'>
+							San Andreas: GPS
+						</h1>
+						<h1 className='tw-text-xs alert alert-primary p-2'>
 							<i className='bi bi-car-front-fill tw-mr-1.5' />
 							REDUX
 						</h1>
@@ -56,7 +59,7 @@ export default function GPS() {
 
 					<span className='text-wrap fs-5'>
 						The definitive GPS mod for Grand Theft Auto: San
-						Andreas. <br /> Providing full navigation both for
+						Andreas. <br /> Providing full navigation for both
 						mission objectives and the player's waypoint.
 					</span>
 					<div className='btn-group tw-mx-auto'>
@@ -70,7 +73,7 @@ export default function GPS() {
 						></Link>
 					</div>
 				</div>
-			</div>
+			</Panel>
 		</>
-	)
+	);
 }

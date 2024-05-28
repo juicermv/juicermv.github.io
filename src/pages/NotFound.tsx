@@ -1,7 +1,9 @@
+import Panel from '../components/Panel';
+
 export default function NotFound() {
 	return (
 		<>
-			<div className='p-4 tw-flex tw-flex-row tw-flex-wrap text-bg-body bg-body tw-items-center tw-justify-center gap-4'>
+			<Panel className='p-4 tw-flex tw-flex-row tw-flex-wrap text-bg-body bg-body tw-items-center tw-justify-center gap-4'>
 				<div className='tw-flex tw-flex-col tw-content-start text-wrap tw-text-center gap-4'>
 					<div
 						className='alert alert-danger'
@@ -11,7 +13,7 @@ export default function NotFound() {
 						found!
 					</div>
 				</div>
-			</div>
+			</Panel>
 		</>
-	)
+	);
 }

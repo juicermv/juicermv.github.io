@@ -1,0 +1,49 @@
+@function to-rgba($value, $alpha) {
+    @return rgba(red($value), green($value), blue($value), $alpha)
+}
+
+@import "bootstrap/scss/functions";
+
+$primary: #3F7AA0;
+$warning: #EDC670;
+$danger: #FF525E;
+
+$body-bg: #FAF8FF;
+$body-color: #1A1B21;
+$border-color: #5D5F67;
+$border-color-translucent: to-rgba(#797A83, .175);
+$body-tertiary-bg: #F4F3FA;
+
+$body-bg-dark: #121318;
+$body-color-dark: #FCFAFF;
+$border-color-dark: #A1A2AC;
+$border-color-translucent-dark: to-rgba(#81838C, .15);
+$body-tertiary-bg-dark: #1A1B21;
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/utilities";
+
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/close";
+
+@import "bootstrap/scss/helpers";
+
+@import "bootstrap/scss/utilities/api"

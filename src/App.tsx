@@ -1,19 +1,12 @@
-// Bootstrap
-import 'bootstrap/dist/js/bootstrap.min.js'
-
 // Pages
-import Home from './pages/Home'
-import Projects from './pages/Projects'
-import GPS from './pages/GPS'
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import GPS from './pages/GPS';
+import NotFound from './pages/NotFound';
 
 // Components
-import NavBar from './components/NavBar'
-
-// Fonts
-import { RouterProvider, createHashRouter } from 'react-router-dom'
-
-import './App.css'
-import NotFound from './pages/NotFound'
+import NavBar from './components/NavBar';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 
 function App() {
 	const router = createHashRouter([
@@ -37,25 +30,25 @@ function App() {
 			id: 'NotFound',
 			element: <NotFound />,
 		},
-	])
+	]);
 
 	document.documentElement.setAttribute(
 		'data-bs-theme',
 		window.matchMedia('(prefers-color-scheme: dark)').matches
 			? 'dark'
 			: 'light'
-	)
+	);
 
 	return (
 		<>
 			<div className='tw-flex tw-h-full tw-flex-col tw-justify-stretch'>
-			<NavBar router={router} />
+				<NavBar router={router} />
 				<div className='tw-w-full tw-my-auto tw-flex tw-flex-col tw-justify-center'>
 					<RouterProvider router={router} />
 				</div>
 			</div>
 		</>
-	)
+	);
 }
 
-export default App
+export default App;

@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import Panel from '../components/Panel';
 
 export default function Home() {
 	return (
 		<>
-			<div className='p-4 tw-flex tw-flex-row tw-flex-wrap text-bg-body bg-body tw-items-center tw-justify-center gap-4'>
+			<Panel className='p-4 tw-flex tw-flex-row tw-flex-wrap text-bg-body bg-body tw-items-center tw-justify-center gap-4'>
 				<div className='tw-flex tw-flex-col tw-content-start text-wrap tw-text-center gap-4'>
 					<h1 className='fs-1 instrument-serif-regular-italic'>
 						Hello!
@@ -19,8 +20,7 @@ export default function Home() {
 								<i className='bi bi-github tw-mr-1' />
 								GitHub.
 							</Link>
-						</p>
-						<p>
+							<br />
 							My most active project at the moment is my GPS mod
 							for GTA SA, which you can take a look at under{' '}
 							<Link
@@ -31,12 +31,10 @@ export default function Home() {
 								GPS Redux.
 							</Link>
 						</p>
+						<p>Thank you so much for taking an interest!</p>
 					</div>
-					<p className='fs-5'>
-						Thank you so much for taking an interest!
-					</p>
 				</div>
-			</div>
+			</Panel>
 		</>
-	)
+	);
 }
