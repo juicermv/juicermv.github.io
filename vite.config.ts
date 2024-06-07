@@ -31,7 +31,6 @@ export default defineConfig({
     lightningcss : {
       minify: true,
       analyzeDependencies: true,
-      
     }
   }
 })
