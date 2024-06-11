@@ -47,9 +47,9 @@ export default function NavBar({ router }: NavBarProps) {
 											{' '}
 											<a
 												className={
-													'nav-link active tw-cursor-pointer alert p-2 m-0 text-center' +
+													'nav-link active tw-cursor-pointer p-2 m-0 text-center ' +
 													(route.path === currentPath
-														? 'text-body-emphasis alert-primary'
+														? 'text-primary'
 														: 'text-body ')
 												}
 												onClick={() => {
