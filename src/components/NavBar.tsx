@@ -1,27 +1,27 @@
-import { useState } from 'react';
-import { useMotionValueEvent, useScroll } from 'framer-motion';
-import { Router } from '@remix-run/router';
-import { To } from 'react-router';
+import { useState } from 'react'
+import { useMotionValueEvent, useScroll } from 'framer-motion'
+import { Router } from '@remix-run/router'
+import { To } from 'react-router'
 
 interface NavBarProps {
-	router: Router;
+	router: Router
 }
 
 export default function NavBar({ router }: NavBarProps) {
-	const { scrollY } = useScroll();
-	const [classes, setClasses] = useState('');
+	const { scrollY } = useScroll()
+	const [classes, setClasses] = useState('')
 	const [currentPath, setCurrentPath] = useState(
 		router.state.location.pathname
-	);
+	)
 
 	useMotionValueEvent(scrollY, 'change', (latest) => {
-		console.log(latest);
+		console.log(latest)
 		if (latest > 0) {
-			setClasses('bg-body-tertiary');
+			setClasses('bg-body-tertiary')
 		} else {
-			setClasses('bg-body');
+			setClasses('bg-body')
 		}
-	});
+	})
 
 	return (
 		<>
@@ -55,26 +55,26 @@ export default function NavBar({ router }: NavBarProps) {
 												onClick={() => {
 													router.navigate(
 														route.path as To
-													);
+													)
 
 													setCurrentPath(
 														route.path as string
-													);
+													)
 												}}
 											>
 												{route.id}
 											</a>
 										</li>
-									);
+									)
 							})}
 						</ul>
 						<a
 							href='https://www.github.com/juicermv/juicermv.github.io'
-							className='btn btn-outline-primary bi bi-github'
+							className='btn btn-outline-secondary bi bi-github'
 						/>
 					</div>
 				</div>
 			</nav>
 		</>
-	);
+	)
 }
