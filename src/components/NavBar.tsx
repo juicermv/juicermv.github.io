@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
 import { router } from '../App'
-import { To, useNavigate } from 'react-router'
+import { To } from 'react-router'
 import { Link, useLocation } from 'react-router-dom'
 
 export default function NavBar() {
