@@ -6,7 +6,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 export default function NavBar() {
 	const { scrollY } = useScroll()
-	const [classes, setClasses] = useState('')
+	const [classes, setClasses] = useState('animate-no-shadow')
 
 	useMotionValueEvent(scrollY, 'change', (latest) => {
 		console.log(latest)
