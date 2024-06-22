@@ -1,27 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useMotionValueEvent, useScroll } from 'framer-motion'
-import { Router } from '@remix-run/router'
-import { To } from 'react-router'
+import { router } from '../App'
+import { To, useNavigate } from 'react-router'
+import { Link, useLocation } from 'react-router-dom'
 
-interface NavBarProps {
-	router: Router
-}
-
-export default function NavBar({ router }: NavBarProps) {
+export default function NavBar() {
 	const { scrollY } = useScroll()
 	const [classes, setClasses] = useState('')
-	const [currentPath, setCurrentPath] = useState(
-		router.state.location.pathname
-	)
 
 	useMotionValueEvent(scrollY, 'change', (latest) => {
 		console.log(latest)
 		if (latest > 0) {
-			setClasses('bg-body-tertiary')
+			setClasses('animate-shadow')
 		} else {
-			setClasses('bg-body')
+			setClasses('animate-no-shadow')
 		}
 	})
+
+	const location = useLocation()
 
 	return (
 		<>
@@ -40,30 +36,25 @@ export default function NavBar({ router }: NavBarProps) {
 						id='navbarNavAltMarkup'
 					>
 						<ul className='navbar-nav me-auto mb-2 mb-lg-0 tw-gap-1'>
-							{router.routes.map((route) => {
+							{router.routes[0].children?.map((route) => {
 								if (route.id !== 'NotFound')
 									return (
 										<li key={route.id}>
 											{' '}
-											<a
+											<Link
+												to={route.path as To}
 												className={
 													'nav-link active tw-cursor-pointer p-2 m-0 text-center ' +
-													(route.path === currentPath
+													((route.index === true
+														? '/'
+														: route.path?.toLowerCase()) ===
+													location.pathname.toLowerCase()
 														? 'text-primary'
 														: 'text-body ')
 												}
-												onClick={() => {
-													router.navigate(
-														route.path as To
-													)
-
-													setCurrentPath(
-														route.path as string
-													)
-												}}
 											>
 												{route.id}
-											</a>
+											</Link>
 										</li>
 									)
 							})}
