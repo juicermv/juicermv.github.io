@@ -41,16 +41,14 @@
   font-style: normal;
 }
 
-@include color-mode(light) {
-  .animate-shadow {
-    transition: background-color 0.2s ease-in;
-    background-color: $body-tertiary-bg;
-  }
+.animate-shadow {
+  transition: background-color 0.2s ease-in;
+  background-color: $body-tertiary-bg;
+}
 
-  .animate-no-shadow {
-    transition: background-color 0.1s ease-out;
-    background-color: $body-bg;
-  }
+.animate-no-shadow {
+  transition: background-color 0.1s ease-out;
+  background-color: $body-bg;
 }
 
 @include color-mode(dark) {
