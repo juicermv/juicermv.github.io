@@ -6,6 +6,10 @@ import App from './App.tsx'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import './scss/main.scss'
 
+document.documentElement.setAttribute(
+	'data-bs-theme',
+	window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>

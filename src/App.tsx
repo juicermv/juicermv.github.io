@@ -49,16 +49,6 @@ export const router = createHashRouter([
 ])
 
 function App() {
-	matchMedia('(prefers-color-scheme: dark)').addEventListener(
-		'change',
-		(event) => {
-			document.documentElement.setAttribute(
-				'data-bs-theme',
-				event.matches ? 'dark' : 'light'
-			)
-		}
-	)
-
 	return (
 		<>
 			<RouterProvider router={router} />
